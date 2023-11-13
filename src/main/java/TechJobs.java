@@ -12,6 +12,7 @@ public class TechJobs {
 
     public static void main (String[] args) {
 
+
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
         columnChoices.put("core competency", "Skill");
@@ -70,7 +71,7 @@ public class TechJobs {
         }
     }
 
-    // ﻿Returns the key of the selected item from the choices Dictionary
+    // Returns the key of the selected item from the choices Dictionary
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
         int choiceIdx = -1;
@@ -120,6 +121,20 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+            return;
+        }
+
+        for (HashMap<String, String> someJob : someJobs){
+            System.out.println("\n*****");
+            for (String key : someJob.keySet()){
+                String textValue = someJob.get(key);
+                System.out.println(key + ": " + textValue);
+            }
+            System.out.println("*****");
+        }
     }
 }
+
+
